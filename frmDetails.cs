@@ -19,6 +19,7 @@ namespace Nursery_Production_Software
         {
             scrn = screen;
             InitializeComponent();
+
         }
 
         private void DynamicButton_Click(object sender, EventArgs e)
