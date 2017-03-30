@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nursery_Production_Software</RootNamespace>
     <AssemblyName>Nursery Production Software</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>Nursery_Production_Software.Program</StartupObject>
     <PublishUrl>publish\</PublishUrl>
@@ -33,6 +33,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,8 +52,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Npgsql, Version=3.2.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.3.2.2\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -69,9 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Common\Global.cs">
-      <Link>Global.cs</Link>
-    </Compile>
+    <Compile Include="dbio.cs" />
     <Compile Include="frmParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +88,7 @@
     <Compile Include="frmDetails.Designer.cs">
       <DependentUpon>frmDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global4k.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmParent.resx">
@@ -102,6 +107,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,28 +142,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Resources\reporting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\INU Code editor\INU Code editor\INU Code editor.csproj">
-      <Project>{954177C6-725D-45FE-9EA9-21F04CD7FBF3}</Project>
-      <Name>INU Code editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pick Printing\Pick Printing\Pick Printing.csproj">
-      <Project>{0D31AA71-880D-424D-B085-A34641EBD2FB}</Project>
-      <Name>Pick Printing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Report Viewer\Report Viewer\Report Viewer.csproj">
-      <Project>{E730E453-89E4-485E-BD18-E9A5015FBF70}</Project>
-      <Name>Report Viewer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tag Printing Application\Tag Printing Application.csproj">
-      <Project>{4B67CF6E-09B1-4BB8-8A23-1D2E403AAA8E}</Project>
-      <Name>Tag Printing Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TagInventory\TagInventory\TagInventory.csproj">
-      <Project>{4A75F5A4-733B-4438-8052-E301A8DB09C8}</Project>
-      <Name>TagInventory</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
