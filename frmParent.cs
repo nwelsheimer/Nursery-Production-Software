@@ -13,9 +13,6 @@ namespace Nursery_Production_Software
     {
         public frmParent()
         {
-            General.Global.set_AppSubKey("Parent");
-            General.Global.registry(General.Global.keyHKLM_AppSubKey, "Database", "MSVision");
-            General.Global.SetConnectionString(General.Global.registry(General.Global.keyHKLM_AppSubKey, "Server").ToString(), General.Global.registry(General.Global.keyHKLM_AppSubKey, "Database").ToString());
 
             InitializeComponent();
         }
@@ -65,11 +62,14 @@ namespace Nursery_Production_Software
 
         private void btnReporting_Click(object sender, EventArgs e)
         {
-            Report_Viewer.frmReportViewer f = new Report_Viewer.frmReportViewer();
-            f.Show();
+            //Report_Viewer.frmReportViewer f = new Report_Viewer.frmReportViewer();
+            //f.Show();
         }
 
-
-
+        private void tsPrefs_Click(object sender, EventArgs e)
+        {
+            frmPreferances f = new frmPreferances();
+            f.ShowDialog();
+        }
     }
 }

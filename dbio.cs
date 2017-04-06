@@ -29,8 +29,7 @@ namespace Nursery_Production_Software
                         server, port, username, password, db);
             try
             {
-                CheckConnection();
-                return true;
+                return CheckConnection();
             } catch
             {
                 return false;
@@ -64,13 +63,30 @@ namespace Nursery_Production_Software
         #endregion
 
         #region Private Functions
-        private static void CheckConnection()
+        private static bool CheckConnection()
         {
             if (conn == null)
             {
-                conn = new NpgsqlConnection(SQLCON);
-                conn.Open();
+                try
+                {
+                    conn = new NpgsqlConnection(SQLCON);
+                    conn.Open();
+                    return true;
+                }
+                catch (NpgsqlException sqlX)
+                {
+                    //com.Connection.Close();
+                    MessageBox.Show("SQL Error occurred:\n" + sqlX.Message);
+                    return false;
+                }
+                catch (Exception X)
+                {
+                    //com.Connection.Close();
+                    MessageBox.Show("Unknown error occurred:\n" + X.Message, "General Error");
+                    return false;
+                }
             }
+            return true;
         }
         #endregion
     }

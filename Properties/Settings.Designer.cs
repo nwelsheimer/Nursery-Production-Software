@@ -25,25 +25,61 @@ namespace Nursery_Production_Software.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.100.3")]
-        public string Server {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbAddress {
             get {
-                return ((string)(this["Server"]));
+                return ((string)(this["dbAddress"]));
             }
             set {
-                this["Server"] = value;
+                this["dbAddress"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MSVision")]
-        public string Database {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbName {
             get {
-                return ((string)(this["Database"]));
+                return ((string)(this["dbName"]));
             }
             set {
-                this["Database"] = value;
+                this["dbName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbUser {
+            get {
+                return ((string)(this["dbUser"]));
+            }
+            set {
+                this["dbUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbPassword {
+            get {
+                return ((string)(this["dbPassword"]));
+            }
+            set {
+                this["dbPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4532")]
+        public string dbPort {
+            get {
+                return ((string)(this["dbPort"]));
+            }
+            set {
+                this["dbPort"] = value;
             }
         }
     }
