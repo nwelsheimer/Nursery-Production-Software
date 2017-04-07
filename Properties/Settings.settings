@@ -11,11 +11,8 @@
     <Setting Name="dbUser" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="dbPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="dbPort" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4532</Value>
+      <Value Profile="(Default)">5432</Value>
     </Setting>
   </Settings>
 </SettingsFile>

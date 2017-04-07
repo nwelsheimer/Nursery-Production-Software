@@ -324,6 +324,7 @@
             this.Name = "frmLogin";
             this.Resizable = false;
             this.Text = "JANS";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stylMan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

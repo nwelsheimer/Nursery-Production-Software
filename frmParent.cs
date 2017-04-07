@@ -6,10 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Nursery_Production_Software
 {
-    public partial class frmParent : Form
+    public partial class frmParent : MetroForm
     {
         public frmParent()
         {
@@ -70,6 +71,19 @@ namespace Nursery_Production_Software
         {
             frmPreferances f = new frmPreferances();
             f.ShowDialog();
+        }
+
+        private void tleOrder_Click(object sender, EventArgs e)
+        {
+            launchDetail(sender);
+        }
+
+        private void launchDetail(object s)
+        {
+            MetroFramework.Controls.MetroTile tile = (MetroFramework.Controls.MetroTile)s;
+            string module = tile.Tag.ToString();
+
+            MessageBox.Show(module);
         }
     }
 }

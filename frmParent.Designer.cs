@@ -28,166 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsPrefs = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmParent));
             this.btnAccounting = new System.Windows.Forms.Button();
-            this.btnReporting = new System.Windows.Forms.Button();
             this.btnShipping = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnProduction = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnPlanning = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.tleOrder = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.fileToolStripMenuItem.Text = "FILE";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsPrefs});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.editToolStripMenuItem.Text = "TOOLS";
-            // 
-            // tsPrefs
-            // 
-            this.tsPrefs.Name = "tsPrefs";
-            this.tsPrefs.Size = new System.Drawing.Size(152, 22);
-            this.tsPrefs.Text = "PREFERANCES";
-            this.tsPrefs.Click += new System.EventHandler(this.tsPrefs_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abouToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.helpToolStripMenuItem.Text = "HELP";
-            // 
-            // abouToolStripMenuItem
-            // 
-            this.abouToolStripMenuItem.Name = "abouToolStripMenuItem";
-            this.abouToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.abouToolStripMenuItem.Text = "About";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 28);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Planning";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 320);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 28);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Ordering";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(256, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 28);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Inventory";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(252, 320);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 28);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Production";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(454, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 28);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Shipping";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(450, 320);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 28);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Accounting";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(652, 144);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 28);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "History";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(652, 320);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 28);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Reporting";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAccounting
             // 
@@ -195,25 +46,12 @@
             this.btnAccounting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAccounting.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccounting.ForeColor = System.Drawing.Color.LightGray;
-            this.btnAccounting.Location = new System.Drawing.Point(454, 236);
+            this.btnAccounting.Location = new System.Drawing.Point(173, 236);
             this.btnAccounting.Name = "btnAccounting";
             this.btnAccounting.Size = new System.Drawing.Size(91, 81);
             this.btnAccounting.TabIndex = 7;
             this.btnAccounting.UseVisualStyleBackColor = true;
             this.btnAccounting.Click += new System.EventHandler(this.btnAccounting_Click);
-            // 
-            // btnReporting
-            // 
-            this.btnReporting.BackgroundImage = global::Nursery_Production_Software.Properties.Resources.reporting;
-            this.btnReporting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReporting.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporting.ForeColor = System.Drawing.Color.LightGray;
-            this.btnReporting.Location = new System.Drawing.Point(652, 236);
-            this.btnReporting.Name = "btnReporting";
-            this.btnReporting.Size = new System.Drawing.Size(91, 81);
-            this.btnReporting.TabIndex = 6;
-            this.btnReporting.UseVisualStyleBackColor = true;
-            this.btnReporting.Click += new System.EventHandler(this.btnReporting_Click);
             // 
             // btnShipping
             // 
@@ -221,7 +59,7 @@
             this.btnShipping.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShipping.ForeColor = System.Drawing.Color.LightGray;
-            this.btnShipping.Location = new System.Drawing.Point(454, 60);
+            this.btnShipping.Location = new System.Drawing.Point(173, 147);
             this.btnShipping.Name = "btnShipping";
             this.btnShipping.Size = new System.Drawing.Size(91, 81);
             this.btnShipping.TabIndex = 5;
@@ -234,7 +72,7 @@
             this.btnInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.ForeColor = System.Drawing.Color.LightGray;
-            this.btnInventory.Location = new System.Drawing.Point(256, 60);
+            this.btnInventory.Location = new System.Drawing.Point(173, 60);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(91, 81);
             this.btnInventory.TabIndex = 4;
@@ -247,7 +85,7 @@
             this.btnProduction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduction.ForeColor = System.Drawing.Color.LightGray;
-            this.btnProduction.Location = new System.Drawing.Point(256, 236);
+            this.btnProduction.Location = new System.Drawing.Point(74, 149);
             this.btnProduction.Name = "btnProduction";
             this.btnProduction.Size = new System.Drawing.Size(91, 81);
             this.btnProduction.TabIndex = 3;
@@ -260,7 +98,7 @@
             this.btnHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.ForeColor = System.Drawing.Color.LightGray;
-            this.btnHistory.Location = new System.Drawing.Point(652, 60);
+            this.btnHistory.Location = new System.Drawing.Point(284, 50);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(91, 81);
             this.btnHistory.TabIndex = 2;
@@ -293,34 +131,59 @@
             this.btnOrder.UseVisualStyleBackColor = true;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroTile1.AutoSize = true;
+            this.metroTile1.Location = new System.Drawing.Point(591, 236);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(188, 137);
+            this.metroTile1.TabIndex = 17;
+            this.metroTile1.Text = "Reporting";
+            this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseTileImage = true;
+            // 
+            // tleOrder
+            // 
+            this.tleOrder.ActiveControl = null;
+            this.tleOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tleOrder.AutoSize = true;
+            this.tleOrder.Location = new System.Drawing.Point(591, 91);
+            this.tleOrder.Name = "tleOrder";
+            this.tleOrder.Size = new System.Drawing.Size(188, 137);
+            this.tleOrder.TabIndex = 18;
+            this.tleOrder.Tag = "1";
+            this.tleOrder.Text = "Ordering";
+            this.tleOrder.TileImage = ((System.Drawing.Image)(resources.GetObject("tleOrder.TileImage")));
+            this.tleOrder.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tleOrder.UseSelectable = true;
+            this.tleOrder.UseTileImage = true;
+            this.tleOrder.Click += new System.EventHandler(this.tleOrder_Click);
+            // 
             // frmParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 400);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(786, 380);
+            this.Controls.Add(this.tleOrder);
+            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.btnAccounting);
-            this.Controls.Add(this.btnReporting);
             this.Controls.Add(this.btnShipping);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnPlanning);
             this.Controls.Add(this.btnOrder);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmParent";
             this.Text = "JANS";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,23 +197,9 @@
         private System.Windows.Forms.Button btnProduction;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnShipping;
-        private System.Windows.Forms.Button btnReporting;
         private System.Windows.Forms.Button btnAccounting;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abouToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsPrefs;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile tleOrder;
     }
 }
 

@@ -28,7 +28,6 @@ namespace Nursery_Production_Software
                 //Save the settings to the registry
                 Properties.Settings.Default.dbAddress = txtdbAddress.Text;
                 Properties.Settings.Default.dbName = txtdbName.Text;
-                Properties.Settings.Default.dbPassword = txtPassword.Text;
                 Properties.Settings.Default.dbPort = txtPort.Text;
                 Properties.Settings.Default.dbUser = txtUsername.Text;
                 Properties.Settings.Default.Save();
@@ -39,7 +38,6 @@ namespace Nursery_Production_Software
                 string dbAddress = Properties.Settings.Default.dbAddress;
                 txtdbAddress.Text = dbAddress;
                 txtdbName.Text = Properties.Settings.Default.dbName;
-                txtPassword.Text = Properties.Settings.Default.dbPassword;
                 txtPort.Text = Properties.Settings.Default.dbPort;
                 txtUsername.Text = Properties.Settings.Default.dbUser;
             }

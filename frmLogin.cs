@@ -19,16 +19,12 @@ namespace Nursery_Production_Software
             this.StyleManager = stylMan;
             this.Text = "JANS Login - " + Application.ProductVersion;
             dbSettings();
-            if (txtUsername.Text != "")
-            {
-                txtPassword.Select();
-                txtPassword.Focus();
-            }
         }
 
         private void btnSetup_Click(object sender, EventArgs e)
         {
             showHideSetup();
+            //Properties.Settings.Default.style = stylMan;
         }
 
         private void showHideSetup()
@@ -55,6 +51,7 @@ namespace Nursery_Production_Software
                 btnSetup.Text = "Hide";
             }
         }
+
         public void dbSettings(bool isSave = false)
         {
             //Code to handle the loading and saving of the dbtab in preferances
@@ -104,9 +101,18 @@ namespace Nursery_Production_Software
                 txtPassword.Text = "";
                 frmParent f = new frmParent();
                 this.Visible = false;
+                f.StyleManager = stylMan;
                 f.ShowDialog();
                 this.Visible = true;
+                this.Activate();
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.Activate();
+            if (txtUsername.Text!="")
+                this.ActiveControl = txtPassword;
         }
     }
 }

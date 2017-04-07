@@ -61,19 +61,7 @@ namespace Nursery_Production_Software.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string dbPassword {
-            get {
-                return ((string)(this["dbPassword"]));
-            }
-            set {
-                this["dbPassword"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4532")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5432")]
         public string dbPort {
             get {
                 return ((string)(this["dbPort"]));
