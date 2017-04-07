@@ -77,12 +77,16 @@ namespace Nursery_Production_Software
                 {
                     //com.Connection.Close();
                     MessageBox.Show("SQL Error occurred:\n" + sqlX.Message);
+                    conn.Close();
+                    conn = null;
                     return false;
                 }
                 catch (Exception X)
                 {
                     //com.Connection.Close();
                     MessageBox.Show("Unknown error occurred:\n" + X.Message, "General Error");
+                    conn.Close();
+                    conn = null;
                     return false;
                 }
             }
