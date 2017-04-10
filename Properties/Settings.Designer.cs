@@ -70,5 +70,29 @@ namespace Nursery_Production_Software.Properties {
                 this["dbPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int stylTheme {
+            get {
+                return ((int)(this["stylTheme"]));
+            }
+            set {
+                this["stylTheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int stylStyle {
+            get {
+                return ((int)(this["stylStyle"]));
+            }
+            set {
+                this["stylStyle"] = value;
+            }
+        }
     }
 }

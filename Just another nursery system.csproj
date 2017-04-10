@@ -89,14 +89,29 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Transitions">
+      <HintPath>..\..\..\Desktop\ModernUiProject\DLL\Transitions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbio.cs" />
-    <Compile Include="frmLogin.cs">
+    <Compile Include="class\plAuth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="class\plAuth.Designer.cs">
+      <DependentUpon>plAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class\plSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="class\plSlider.Designer.cs">
+      <DependentUpon>plSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="etc\dbio.cs" />
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmParent.cs">
       <SubType>Form</SubType>
@@ -116,11 +131,17 @@
     <Compile Include="frmPreferances.Designer.cs">
       <DependentUpon>frmPreferances.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global4k.cs" />
+    <Compile Include="etc\Global4k.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="class\plAuth.resx">
+      <DependentUpon>plAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="class\plSlider.resx">
+      <DependentUpon>plSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmParent.resx">
       <DependentUpon>frmParent.cs</DependentUpon>
@@ -210,6 +231,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

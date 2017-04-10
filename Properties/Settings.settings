@@ -14,5 +14,11 @@
     <Setting Name="dbPort" Type="System.String" Scope="User">
       <Value Profile="(Default)">5432</Value>
     </Setting>
+    <Setting Name="stylTheme" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="stylStyle" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
