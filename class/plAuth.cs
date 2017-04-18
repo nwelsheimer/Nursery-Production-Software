@@ -18,6 +18,7 @@ namespace Nursery_Production_Software.Class
     {
         public event EventHandler SettingClosed;
         public event EventHandler LogInSuccess;
+        public int userId = 0;
 
         public plAuth(Form owner)
                 : base(owner)
@@ -149,6 +150,7 @@ namespace Nursery_Production_Software.Class
             //raise loginsuccess if we won
             if (doLogin > 0)
             {
+                userId = doLogin;
                 EventHandler handler = LogInSuccess;
                 if (handler != null) handler(this, e);
             } else

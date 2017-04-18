@@ -15,6 +15,13 @@ namespace Nursery_Production_Software
     public partial class frmMain : MetroForm
     {
         plAuth _Auth = null;
+        int userId = 0;
+
+        /// <summary>
+        /// select * 
+        ///from sys_menu sm
+        ///    inner join sys_menudetail smd on sm.id = smd.menuid
+        /// </summary>
 
         public frmMain()
         {
@@ -37,6 +44,7 @@ namespace Nursery_Production_Software
         void _AuthLoginSuccess(object sender, EventArgs e)
         {
             _Auth.swipe(false);
+            userId = _Auth.userId;
         }
 
         void _AuthSettingsClose(object sender, EventArgs e)
