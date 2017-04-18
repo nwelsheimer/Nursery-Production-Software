@@ -61,7 +61,7 @@ namespace Nursery_Production_Software.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5432")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1433")]
         public string dbPort {
             get {
                 return ((string)(this["dbPort"]));
@@ -92,6 +92,30 @@ namespace Nursery_Production_Software.Properties {
             }
             set {
                 this["stylStyle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbPass {
+            get {
+                return ((string)(this["dbPass"]));
+            }
+            set {
+                this["dbPass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string sysUser {
+            get {
+                return ((string)(this["sysUser"]));
+            }
+            set {
+                this["sysUser"] = value;
             }
         }
     }

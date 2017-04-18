@@ -45,28 +45,6 @@ namespace Nursery_Production_Software
             lnkSystem.Visible = true;
         }
 
-        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnLogin.PerformClick();
-            }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-           // if (dbio.ConnectToDB(txtHost.Text, txtDb.Text, txtUsername.Text, txtPassword.Text, txtPort.Text))
-            //{
-                //txtPassword.Text = "";
-                frmParent f = new frmParent();
-                this.Visible = false;
-                f.StyleManager = stylMan;
-                f.ShowDialog();
-                this.Visible = true;
-                this.Activate();
-            //}
-        }
-
         private void frmMain_Shown(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Controls;
 using MetroFramework;
 using MetroFramework.Forms;
+using General;
 
 namespace Nursery_Production_Software.Class
 {
@@ -93,6 +94,14 @@ namespace Nursery_Production_Software.Class
         {
             dbSettings(true);
         }
+        private void txtDBUser_Leave(object sender, EventArgs e)
+        {
+            dbSettings(true);
+        }
+        private void txtDBPass_Leave(object sender, EventArgs e)
+        {
+            dbSettings(true);
+        }
         public void dbSettings(bool isSave = false)
         {
             //Code to handle the loading and saving of the dbtab in preferances
@@ -102,7 +111,9 @@ namespace Nursery_Production_Software.Class
                 Properties.Settings.Default.dbAddress = txtHost.Text;
                 Properties.Settings.Default.dbName = txtDb.Text;
                 Properties.Settings.Default.dbPort = txtPort.Text;
-                Properties.Settings.Default.dbUser = txtUsername.Text;
+                Properties.Settings.Default.dbUser = txtDBUser.Text;
+                Properties.Settings.Default.dbPass = txtDBPass.Text;
+                Properties.Settings.Default.sysUser = txtUsername.Text;
                 Properties.Settings.Default.Save();
             }
             else
@@ -111,7 +122,9 @@ namespace Nursery_Production_Software.Class
                 txtHost.Text = Properties.Settings.Default.dbAddress;
                 txtDb.Text = Properties.Settings.Default.dbName;
                 txtPort.Text = Properties.Settings.Default.dbPort;
-                txtUsername.Text = Properties.Settings.Default.dbUser;
+                txtDBUser.Text = Properties.Settings.Default.dbUser;
+                txtDBPass.Text = Properties.Settings.Default.dbPass;
+                txtUsername.Text = Properties.Settings.Default.sysUser;
             }
         }
         #endregion
@@ -119,10 +132,37 @@ namespace Nursery_Production_Software.Class
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             //do work to verify username and password
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            int doLogin = 0;
+
+            Global.SetConnectionString(txtHost.Text, txtDb.Text, txtPort.Text, txtDBUser.Text, txtDBPass.Text);
+
+            try
+            {
+                doLogin = Convert.ToInt16(Global.GetData("usp_SYS_Login @username='" + username + "', @password='" + password + "'").Tables[0].Rows[0][0]);
+            } catch
+            {
+                MetroMessageBox.Show(this, "There was an issue connecting to the server. Please check your connection settings.");
+            }
 
             //raise loginsuccess if we won
-            EventHandler handler = LogInSuccess;
-            if (handler != null) handler(this, e);
+            if (doLogin > 0)
+            {
+                EventHandler handler = LogInSuccess;
+                if (handler != null) handler(this, e);
+            } else
+            {
+                MetroMessageBox.Show(this,"Invalid username or password provided. Please try again.");
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogIn_Click(sender,e);
+            }
         }
     }
 }

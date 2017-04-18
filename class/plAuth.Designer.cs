@@ -38,6 +38,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.mtcSettings = new MetroFramework.Controls.MetroTabControl();
             this.mtpConnection = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtDBPass = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.txtDBUser = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.lblPort = new MetroFramework.Controls.MetroLabel();
             this.lblHost = new MetroFramework.Controls.MetroLabel();
@@ -124,6 +128,7 @@
             this.txtPassword.WaterMark = "Password";
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUsername
             // 
@@ -219,6 +224,10 @@
             // 
             // mtpConnection
             // 
+            this.mtpConnection.Controls.Add(this.metroLabel5);
+            this.mtpConnection.Controls.Add(this.txtDBPass);
+            this.mtpConnection.Controls.Add(this.metroLabel4);
+            this.mtpConnection.Controls.Add(this.txtDBUser);
             this.mtpConnection.Controls.Add(this.metroLabel3);
             this.mtpConnection.Controls.Add(this.lblPort);
             this.mtpConnection.Controls.Add(this.lblHost);
@@ -237,6 +246,98 @@
             this.mtpConnection.VerticalScrollbarBarColor = true;
             this.mtpConnection.VerticalScrollbarHighlightOnWheel = false;
             this.mtpConnection.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel5.Location = new System.Drawing.Point(3, 293);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(86, 25);
+            this.metroLabel5.TabIndex = 22;
+            this.metroLabel5.Text = "Password:";
+            // 
+            // txtDBPass
+            // 
+            this.txtDBPass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // 
+            // 
+            this.txtDBPass.CustomButton.Image = null;
+            this.txtDBPass.CustomButton.Location = new System.Drawing.Point(181, 2);
+            this.txtDBPass.CustomButton.Name = "";
+            this.txtDBPass.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtDBPass.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDBPass.CustomButton.TabIndex = 1;
+            this.txtDBPass.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDBPass.CustomButton.UseSelectable = true;
+            this.txtDBPass.CustomButton.Visible = false;
+            this.txtDBPass.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtDBPass.Lines = new string[0];
+            this.txtDBPass.Location = new System.Drawing.Point(3, 321);
+            this.txtDBPass.MaxLength = 32767;
+            this.txtDBPass.Name = "txtDBPass";
+            this.txtDBPass.PasswordChar = '*';
+            this.txtDBPass.PromptText = "Optional";
+            this.txtDBPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDBPass.SelectedText = "";
+            this.txtDBPass.SelectionLength = 0;
+            this.txtDBPass.SelectionStart = 0;
+            this.txtDBPass.ShortcutsEnabled = true;
+            this.txtDBPass.Size = new System.Drawing.Size(209, 30);
+            this.txtDBPass.TabIndex = 21;
+            this.txtDBPass.UseSelectable = true;
+            this.txtDBPass.WaterMark = "Optional";
+            this.txtDBPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDBPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDBPass.Leave += new System.EventHandler(this.txtDBPass_Leave);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel4.Location = new System.Drawing.Point(3, 232);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(93, 25);
+            this.metroLabel4.TabIndex = 20;
+            this.metroLabel4.Text = "Username:";
+            // 
+            // txtDBUser
+            // 
+            this.txtDBUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // 
+            // 
+            this.txtDBUser.CustomButton.Image = null;
+            this.txtDBUser.CustomButton.Location = new System.Drawing.Point(181, 2);
+            this.txtDBUser.CustomButton.Name = "";
+            this.txtDBUser.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtDBUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDBUser.CustomButton.TabIndex = 1;
+            this.txtDBUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDBUser.CustomButton.UseSelectable = true;
+            this.txtDBUser.CustomButton.Visible = false;
+            this.txtDBUser.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtDBUser.Lines = new string[0];
+            this.txtDBUser.Location = new System.Drawing.Point(3, 260);
+            this.txtDBUser.MaxLength = 32767;
+            this.txtDBUser.Name = "txtDBUser";
+            this.txtDBUser.PasswordChar = '\0';
+            this.txtDBUser.PromptText = "Optional";
+            this.txtDBUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDBUser.SelectedText = "";
+            this.txtDBUser.SelectionLength = 0;
+            this.txtDBUser.SelectionStart = 0;
+            this.txtDBUser.ShortcutsEnabled = true;
+            this.txtDBUser.Size = new System.Drawing.Size(209, 30);
+            this.txtDBUser.TabIndex = 19;
+            this.txtDBUser.UseSelectable = true;
+            this.txtDBUser.WaterMark = "Optional";
+            this.txtDBUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDBUser.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDBUser.Leave += new System.EventHandler(this.txtDBUser_Leave);
             // 
             // metroLabel3
             // 
@@ -338,7 +439,7 @@
             this.txtPort.MaxLength = 32767;
             this.txtPort.Name = "txtPort";
             this.txtPort.PasswordChar = '\0';
-            this.txtPort.PromptText = "5432";
+            this.txtPort.PromptText = "1433";
             this.txtPort.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPort.SelectedText = "";
             this.txtPort.SelectionLength = 0;
@@ -347,7 +448,7 @@
             this.txtPort.Size = new System.Drawing.Size(94, 30);
             this.txtPort.TabIndex = 13;
             this.txtPort.UseSelectable = true;
-            this.txtPort.WaterMark = "5432";
+            this.txtPort.WaterMark = "1433";
             this.txtPort.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPort.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPort.Leave += new System.EventHandler(this.txtPort_Leave);
@@ -521,5 +622,9 @@
         private MetroFramework.Controls.MetroTextBox txtPort;
         private MetroFramework.Controls.MetroTextBox txtHost;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox txtDBPass;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroTextBox txtDBUser;
     }
 }

@@ -160,7 +160,7 @@ namespace General
         //    return mds;
         //}
 
-        public static void SetConnectionString(string server, string db)
+        public static void SetConnectionString(string server, string db, string port = "1433", string username = "", string password = "")
         {
             try
             {
@@ -171,8 +171,26 @@ namespace General
                 }
                 else
                 {
-                    SQLCON = "Data Source=" + server + ";Initial Catalog=" + db + ";Integrated Security=True;";
+                    SQLCON = "Data Source=" + server;
+                    if (port == "")
+                    {
+                        SQLCON += ";Initial Catalog=" + db;
+                    }
+                    else
+                    {
+                        SQLCON += "," + port + ";Initial Catalog=" + db;
+                    }
+
+                    if (username =="")
+                    {
+                        SQLCON += ";Integrated Security=True;";
+                    }
+                    else
+                    {
+                        SQLCON += ";User Id=" + username +"; Password="+password+";";
+                    }
                 }
+
             }
             catch (Exception)
             {
