@@ -18,7 +18,7 @@ namespace Nursery_Production_Software
     {
         plAuth _Auth = null;
         int userId = 0;
-
+        
         public frmMain()
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace Nursery_Production_Software
             _Auth.SettingClosed += _AuthSettingsClose;
             _Auth.LogInSuccess += _AuthLoginSuccess;
             _Auth.swipe();
+            lnkSettings.Visible = true;
         }
 
         void _AuthLoginSuccess(object sender, EventArgs e)
@@ -56,11 +57,13 @@ namespace Nursery_Production_Software
                 MetroFramework.Controls.MetroLabel menuTitle = new MetroFramework.Controls.MetroLabel();
                 menuPage.Name = dr["MenuName"].ToString();
                 menuPage.Text = dr["MenuName"].ToString();
+                menuPage.StyleManager = stylMan;
                 //apply some formating to the label
                 menuTitle.Text = dr["MenuTitle"].ToString();
                 menuTitle.Location = new System.Drawing.Point(15, 20);
                 menuTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
                 menuTitle.AutoSize = true;
+                menuTitle.StyleManager = stylMan;
                 menuPage.Controls.Add(menuTitle);
                 //now fetch a list of the submenus from the orignal table that have the same name
                 DataView subTemp = menuSystem.DefaultView;
@@ -88,9 +91,9 @@ namespace Nursery_Production_Software
 
                 this.mtcMainMenu.Controls.Add(menuPage);
             }
+            lnkSettings.Visible = false;
             _Auth.swipe(false);
             userId = _Auth.userId;
-
         }
 
         private void DynamicMouseOver(object sender, EventArgs e)
@@ -113,11 +116,10 @@ namespace Nursery_Production_Software
                 Form myForm = myAssembly.CreateInstance(formname) as Form;
                 myForm.Show();
             }
-            catch
+            catch (Exception x)
             {
-                MessageBox.Show("There was an error loading the application. Please contact technical support", "Error");
+                MessageBox.Show("There was an error loading the application. Please contact technical support.  " +x, "Error");
             }
-            
         }
 
         void _AuthSettingsClose(object sender, EventArgs e)
@@ -135,7 +137,7 @@ namespace Nursery_Production_Software
         {
             lnkSettings.Visible = false;
             lnkSystem.Visible = false;
-
+            
             _Auth.ShowSettings();
         }
 

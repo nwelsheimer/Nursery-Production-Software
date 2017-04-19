@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using MetroFramework.Controls;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -19,6 +20,8 @@ namespace Nursery_Production_Software.Class
         public event EventHandler SettingClosed;
         public event EventHandler LogInSuccess;
         public int userId = 0;
+
+        RegistryKey jans = Global.get_reg_key("JANS", true);
 
         public plAuth(Form owner)
                 : base(owner)
@@ -49,6 +52,8 @@ namespace Nursery_Production_Software.Class
         {
             //display preferances, disable the login box
             plPrefs.Visible = true;
+            plPrefs.BringToFront();
+            plPrefs.Select();
             plBanner.Enabled = false;
         }
 
@@ -110,10 +115,15 @@ namespace Nursery_Production_Software.Class
             {
                 //Save the settings to the registry
                 Properties.Settings.Default.dbAddress = txtHost.Text;
+                jans.SetValue("dbHost", txtHost.Text);
                 Properties.Settings.Default.dbName = txtDb.Text;
+                jans.SetValue("dbName", txtDb.Text);
                 Properties.Settings.Default.dbPort = txtPort.Text;
+                jans.SetValue("dbPort", txtPort.Text);
                 Properties.Settings.Default.dbUser = txtDBUser.Text;
+                jans.SetValue("dbUser", txtDBUser.Text);
                 Properties.Settings.Default.dbPass = txtDBPass.Text;
+                jans.SetValue("dbPass", txtDBPass.Text);
                 Properties.Settings.Default.sysUser = txtUsername.Text;
                 Properties.Settings.Default.Save();
             }

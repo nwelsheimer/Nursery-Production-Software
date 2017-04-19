@@ -209,7 +209,6 @@
             this.btnTest.TabIndex = 12;
             this.btnTest.Text = "Test connection";
             this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // frmPreferances
             // 

@@ -49,12 +49,6 @@ namespace Nursery_Production_Software
             MessageBox.Show("Successfully updated database settings");
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            if (dbio.ConnectToDB(txtdbAddress.Text, txtdbName.Text, txtUsername.Text, txtPassword.Text, txtPort.Text))
-                MessageBox.Show("The connection to the database was successful!");
-            else
-                MessageBox.Show("The connection to database failed!");
-        }
+
     }
 }

@@ -94,6 +94,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Common\Global4k.cs">
+      <Link>Global4k.cs</Link>
+    </Compile>
     <Compile Include="class\plAuth.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,7 +109,6 @@
     <Compile Include="class\plSlider.Designer.cs">
       <DependentUpon>plSlider.cs</DependentUpon>
     </Compile>
-    <Compile Include="etc\dbio.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +121,6 @@
     <Compile Include="frmPreferances.Designer.cs">
       <DependentUpon>frmPreferances.cs</DependentUpon>
     </Compile>
-    <Compile Include="etc\Global4k.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="class\plAuth.resx">
@@ -214,10 +215,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pre-Battler\Pre-Battler\Pre-Battler.csproj">
+    <ProjectReference Include="..\Battler\Pre-Battler\Pre-Battler.csproj">
       <Project>{0dd90b4a-7a76-495e-a4f9-619c9f82dc0e}</Project>
       <Name>Pre-Battler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PottingInformation\Potting Information\PottingInformation.csproj">
+      <Project>{58cebb45-0a24-4e4e-8a21-796940145203}</Project>
+      <Name>PottingInformation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="etc\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
