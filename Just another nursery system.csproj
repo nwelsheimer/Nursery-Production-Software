@@ -94,9 +94,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Common\Global4k.cs">
-      <Link>Global4k.cs</Link>
-    </Compile>
     <Compile Include="class\plAuth.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +106,8 @@
     <Compile Include="class\plSlider.Designer.cs">
       <DependentUpon>plSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="etc\dbio.cs" />
+    <Compile Include="etc\Global4k.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,9 +223,7 @@
       <Name>PottingInformation</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="etc\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
