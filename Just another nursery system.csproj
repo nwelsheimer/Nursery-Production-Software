@@ -113,18 +113,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmParent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmParent.Designer.cs">
-      <DependentUpon>frmParent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDetails.Designer.cs">
-      <DependentUpon>frmDetails.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPreferances.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmParent.resx">
-      <DependentUpon>frmParent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDetails.resx">
-      <DependentUpon>frmDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPreferances.resx">
       <DependentUpon>frmPreferances.cs</DependentUpon>
@@ -231,7 +213,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Pre-Battler\Pre-Battler\Pre-Battler.csproj">
+      <Project>{0dd90b4a-7a76-495e-a4f9-619c9f82dc0e}</Project>
+      <Name>Pre-Battler</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

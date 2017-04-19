@@ -37,14 +37,17 @@
             this.lnLogout = new MetroFramework.Controls.MetroLink();
             this.lnLock = new MetroFramework.Controls.MetroLink();
             this.lnExit = new MetroFramework.Controls.MetroLink();
-            this.mtcSettings = new MetroFramework.Controls.MetroTabControl();
-            this.mtpConnection = new MetroFramework.Controls.MetroTabPage();
             this.mtpTheme = new MetroFramework.Controls.MetroTabPage();
             this.flpSettings = new System.Windows.Forms.FlowLayoutPanel();
+            this.mtpConnection = new MetroFramework.Controls.MetroTabPage();
+            this.mtcMainMenu = new MetroFramework.Controls.MetroTabControl();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.stylMan)).BeginInit();
             this.plSystem.SuspendLayout();
-            this.mtcSettings.SuspendLayout();
             this.mtpTheme.SuspendLayout();
+            this.mtpConnection.SuspendLayout();
+            this.mtcMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // stylMan
@@ -141,34 +144,6 @@
             this.lnExit.UseSelectable = true;
             this.lnExit.Click += new System.EventHandler(this.lnExit_Click);
             // 
-            // mtcSettings
-            // 
-            this.mtcSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtcSettings.Controls.Add(this.mtpConnection);
-            this.mtcSettings.Controls.Add(this.mtpTheme);
-            this.mtcSettings.Location = new System.Drawing.Point(13, 57);
-            this.mtcSettings.Name = "mtcSettings";
-            this.mtcSettings.SelectedIndex = 0;
-            this.mtcSettings.Size = new System.Drawing.Size(1209, 674);
-            this.mtcSettings.TabIndex = 16;
-            this.mtcSettings.UseSelectable = true;
-            // 
-            // mtpConnection
-            // 
-            this.mtpConnection.HorizontalScrollbarBarColor = true;
-            this.mtpConnection.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtpConnection.HorizontalScrollbarSize = 10;
-            this.mtpConnection.Location = new System.Drawing.Point(4, 38);
-            this.mtpConnection.Name = "mtpConnection";
-            this.mtpConnection.Size = new System.Drawing.Size(1201, 632);
-            this.mtpConnection.TabIndex = 0;
-            this.mtpConnection.Text = "&connection";
-            this.mtpConnection.VerticalScrollbarBarColor = true;
-            this.mtpConnection.VerticalScrollbarHighlightOnWheel = false;
-            this.mtpConnection.VerticalScrollbarSize = 10;
-            // 
             // mtpTheme
             // 
             this.mtpTheme.Controls.Add(this.flpSettings);
@@ -194,13 +169,63 @@
             this.flpSettings.Size = new System.Drawing.Size(1201, 552);
             this.flpSettings.TabIndex = 2;
             // 
+            // mtpConnection
+            // 
+            this.mtpConnection.Controls.Add(this.metroTile1);
+            this.mtpConnection.Controls.Add(this.metroLabel1);
+            this.mtpConnection.HorizontalScrollbarBarColor = true;
+            this.mtpConnection.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpConnection.HorizontalScrollbarSize = 10;
+            this.mtpConnection.Location = new System.Drawing.Point(4, 38);
+            this.mtpConnection.Name = "mtpConnection";
+            this.mtpConnection.Size = new System.Drawing.Size(977, 632);
+            this.mtpConnection.TabIndex = 0;
+            this.mtpConnection.Text = "&connection";
+            this.mtpConnection.VerticalScrollbarBarColor = true;
+            this.mtpConnection.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpConnection.VerticalScrollbarSize = 10;
+            // 
+            // mtcMainMenu
+            // 
+            this.mtcMainMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtcMainMenu.Controls.Add(this.mtpConnection);
+            this.mtcMainMenu.Controls.Add(this.mtpTheme);
+            this.mtcMainMenu.Location = new System.Drawing.Point(13, 57);
+            this.mtcMainMenu.Name = "mtcMainMenu";
+            this.mtcMainMenu.SelectedIndex = 0;
+            this.mtcMainMenu.Size = new System.Drawing.Size(985, 674);
+            this.mtcMainMenu.TabIndex = 16;
+            this.mtcMainMenu.UseSelectable = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(17, 19);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(103, 25);
+            this.metroLabel1.TabIndex = 2;
+            this.metroLabel1.Text = "metroLabel1";
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(6, 71);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(150, 150);
+            this.metroTile1.TabIndex = 3;
+            this.metroTile1.Text = "metroTile1";
+            this.metroTile1.UseSelectable = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 742);
             this.ControlBox = false;
-            this.Controls.Add(this.mtcSettings);
+            this.Controls.Add(this.mtcMainMenu);
             this.Controls.Add(this.plSystem);
             this.Controls.Add(this.lnkSettings);
             this.Controls.Add(this.lnkSystem);
@@ -214,8 +239,10 @@
             this.Shown += new System.EventHandler(this.frmMain_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.stylMan)).EndInit();
             this.plSystem.ResumeLayout(false);
-            this.mtcSettings.ResumeLayout(false);
             this.mtpTheme.ResumeLayout(false);
+            this.mtpConnection.ResumeLayout(false);
+            this.mtpConnection.PerformLayout();
+            this.mtcMainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -228,9 +255,11 @@
         private MetroFramework.Controls.MetroLink lnExit;
         private MetroFramework.Controls.MetroLink lnLogout;
         private MetroFramework.Controls.MetroLink lnLock;
-        private MetroFramework.Controls.MetroTabControl mtcSettings;
+        private MetroFramework.Controls.MetroTabControl mtcMainMenu;
         private MetroFramework.Controls.MetroTabPage mtpConnection;
         private MetroFramework.Controls.MetroTabPage mtpTheme;
         private System.Windows.Forms.FlowLayoutPanel flpSettings;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }
