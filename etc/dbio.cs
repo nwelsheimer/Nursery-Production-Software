@@ -15,8 +15,7 @@ namespace Nursery_Production_Software
         public static string
             SQLCON,
             validEmail = @"\w{1,}[@][\w\-]{1,}([.]([\w\-]{1,}))+$",
-            validPhone = @"^(\d{3})?\d{7}",
-            strAppSubKey;
+            validPhone = @"^(\d{3})?\d{7}";
         #endregion
         #region Private Properties
         private static NpgsqlConnection conn = null; //The connection to the database server that everything should flow through

@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using System.Reflection;
+using Microsoft.Win32;
 using Nursery_Production_Software.Class;
 using General;
 
@@ -18,15 +13,34 @@ namespace Nursery_Production_Software
     {
         plAuth _Auth = null;
         int userId = 0;
-        
+        RegistryKey jans = Global.get_reg_key("JANS", true); //Getting settings from registry now.
+
         public frmMain()
         {
             InitializeComponent();
+
+            stylMan = setStyles();
+            stylMan.Owner = this;
             this.StyleManager = stylMan;
+
             this.Text = "JANS Login - " + Application.ProductVersion;
             this.Shown += frmMain_Shown;
 
             showLogin();
+        }
+
+        private MetroFramework.Components.MetroStyleManager setStyles()
+        {
+            MetroFramework.Components.MetroStyleManager sm = new MetroFramework.Components.MetroStyleManager();
+            int style = 0;
+            int theme = 0;
+
+            style = jans.GetValue("metroStyle") == null ? 0 : Convert.ToInt16(jans.GetValue("metroStyle"));
+            theme = jans.GetValue("metroTheme") == null ? 0 : Convert.ToInt16(jans.GetValue("metroTheme"));
+
+            sm.Style = (MetroFramework.MetroColorStyle)style;
+            sm.Theme = (MetroFramework.MetroThemeStyle)theme;
+            return sm;
         }
 
         private void showLogin()
@@ -95,17 +109,15 @@ namespace Nursery_Production_Software
             _Auth.swipe(false);
             userId = _Auth.userId;
         }
-
+#region dynaminc button clicking
         private void DynamicMouseOver(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
         }
-
         private void DynamicMouseOut(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
         }
-
         private void DynamicButton_Click(object sender, EventArgs e)
         {
             string assemblyname = ((MetroFramework.Controls.MetroTile)sender).Name;
@@ -121,6 +133,7 @@ namespace Nursery_Production_Software
                 MessageBox.Show("There was an error loading the application. Please contact technical support.  " +x, "Error");
             }
         }
+#endregion
 
         void _AuthSettingsClose(object sender, EventArgs e)
         {
@@ -161,6 +174,13 @@ namespace Nursery_Production_Software
         private void lnLogout_Click(object sender, EventArgs e)
         {
             showLogin();
+        }
+
+        private void lnLock_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(Convert.ToInt16(stylMan.Style).ToString());
+            stylMan.Style = (MetroFramework.MetroColorStyle)5;
+            stylMan.Theme = (MetroFramework.MetroThemeStyle)2;
         }
     }
 }

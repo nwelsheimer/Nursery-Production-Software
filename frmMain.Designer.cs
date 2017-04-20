@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.stylMan = new MetroFramework.Components.MetroStyleManager(this.components);
             this.lnkSystem = new MetroFramework.Controls.MetroLink();
             this.lnkSettings = new MetroFramework.Controls.MetroLink();
             this.plSystem = new MetroFramework.Controls.MetroPanel();
@@ -38,13 +37,10 @@
             this.lnLock = new MetroFramework.Controls.MetroLink();
             this.lnExit = new MetroFramework.Controls.MetroLink();
             this.mtcMainMenu = new MetroFramework.Controls.MetroTabControl();
-            ((System.ComponentModel.ISupportInitialize)(this.stylMan)).BeginInit();
+            this.stylMan = new MetroFramework.Components.MetroStyleManager(this.components);
             this.plSystem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stylMan)).BeginInit();
             this.SuspendLayout();
-            // 
-            // stylMan
-            // 
-            this.stylMan.Owner = this;
             // 
             // lnkSystem
             // 
@@ -120,6 +116,7 @@
             this.lnLock.Text = "LOCK";
             this.lnLock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lnLock.UseSelectable = true;
+            this.lnLock.Click += new System.EventHandler(this.lnLock_Click);
             // 
             // lnExit
             // 
@@ -147,6 +144,10 @@
             this.mtcMainMenu.TabIndex = 16;
             this.mtcMainMenu.UseSelectable = true;
             // 
+            // stylMan
+            // 
+            this.stylMan.Owner = null;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,14 +166,13 @@
             this.Text = "JANS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.frmMain_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.stylMan)).EndInit();
             this.plSystem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stylMan)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Components.MetroStyleManager stylMan;
         private MetroFramework.Controls.MetroLink lnkSettings;
         private MetroFramework.Controls.MetroLink lnkSystem;
         private MetroFramework.Controls.MetroPanel plSystem;
@@ -180,5 +180,6 @@
         private MetroFramework.Controls.MetroLink lnLogout;
         private MetroFramework.Controls.MetroLink lnLock;
         private MetroFramework.Controls.MetroTabControl mtcMainMenu;
+        private MetroFramework.Components.MetroStyleManager stylMan;
     }
 }

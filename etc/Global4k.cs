@@ -92,6 +92,7 @@ namespace General
                 catch (Exception ex)
                 {
                     // Handle exception properly
+                    MessageBox.Show("There was an SQL error: " + ex);
                 }
                 finally
                 {
@@ -502,8 +503,7 @@ namespace General
                 System.Text.RegularExpressions.Regex.Replace(phone.Trim(), @"[^\d]", ""),
                 validPhone);
         }
-        # endregion
-
+        #endregion
 
         public static char LetterToNum(int column)
         {

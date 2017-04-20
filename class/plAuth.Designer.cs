@@ -474,7 +474,7 @@
             this.txtHost.MaxLength = 32767;
             this.txtHost.Name = "txtHost";
             this.txtHost.PasswordChar = '\0';
-            this.txtHost.PromptText = "postgres.domain.com";
+            this.txtHost.PromptText = "sql.domain.com";
             this.txtHost.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtHost.SelectedText = "";
             this.txtHost.SelectionLength = 0;
@@ -483,7 +483,7 @@
             this.txtHost.Size = new System.Drawing.Size(209, 30);
             this.txtHost.TabIndex = 12;
             this.txtHost.UseSelectable = true;
-            this.txtHost.WaterMark = "postgres.domain.com";
+            this.txtHost.WaterMark = "sql.domain.com";
             this.txtHost.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtHost.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtHost.Leave += new System.EventHandler(this.txtHost_Leave);

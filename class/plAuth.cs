@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using MetroFramework.Controls;
@@ -45,7 +39,7 @@ namespace Nursery_Production_Software.Class
         {
             //if you click the tiles, change the selected color scheme then save to reg
             ((MetroForm)this.Parent).StyleManager.Style = (MetroColorStyle)((MetroTile)sender).Tag;
-            //Properties.Settings.Default.stylStyle = ((MetroTile)sender).Tag.ToString();
+            jans.SetValue("metroStyle", ((MetroTile)sender).Tag);
         }
         
         public void ShowSettings()
@@ -72,6 +66,7 @@ namespace Nursery_Production_Software.Class
             if (mrbDark.Checked)
             {
                 ((MetroForm)this.Parent).StyleManager.Theme = MetroThemeStyle.Dark;
+                jans.SetValue("metroTheme", 2);
             }
         }
 
@@ -80,6 +75,7 @@ namespace Nursery_Production_Software.Class
             if (mrbLight.Checked)
             {
                 ((MetroForm)this.Parent).StyleManager.Theme = MetroThemeStyle.Light;
+                jans.SetValue("metroTheme", 1);
             }
         }
 
