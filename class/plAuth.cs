@@ -21,7 +21,7 @@ namespace Nursery_Production_Software.Class
                 : base(owner)
         {
             InitializeComponent();
-
+            
             for (int i = 3; i < 13; i++)
             {
                 //create the color tiles in the theme selector

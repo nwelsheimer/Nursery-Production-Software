@@ -146,7 +146,7 @@
             // 
             // stylMan
             // 
-            this.stylMan.Owner = null;
+            this.stylMan.Owner = this;
             // 
             // frmMain
             // 
@@ -158,6 +158,7 @@
             this.Controls.Add(this.plSystem);
             this.Controls.Add(this.lnkSettings);
             this.Controls.Add(this.lnkSystem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

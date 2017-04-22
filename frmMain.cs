@@ -6,6 +6,8 @@ using System.Reflection;
 using Microsoft.Win32;
 using Nursery_Production_Software.Class;
 using General;
+using System.Drawing;
+using System.IO;
 
 namespace Nursery_Production_Software
 {
@@ -19,19 +21,16 @@ namespace Nursery_Production_Software
         {
             InitializeComponent();
 
-            stylMan = setStyles();
-            stylMan.Owner = this;
-            this.StyleManager = stylMan;
-
             this.Text = "JANS Login - " + Application.ProductVersion;
             this.Shown += frmMain_Shown;
 
             showLogin();
+
+            this.StyleManager = stylMan;
         }
 
-        private MetroFramework.Components.MetroStyleManager setStyles()
+        private void setStyles(MetroFramework.Components.MetroStyleManager sm)
         {
-            MetroFramework.Components.MetroStyleManager sm = new MetroFramework.Components.MetroStyleManager();
             int style = 0;
             int theme = 0;
 
@@ -40,7 +39,6 @@ namespace Nursery_Production_Software
 
             sm.Style = (MetroFramework.MetroColorStyle)style;
             sm.Theme = (MetroFramework.MetroThemeStyle)theme;
-            return sm;
         }
 
         private void showLogin()
@@ -50,6 +48,7 @@ namespace Nursery_Production_Software
             _Auth.LogInSuccess += _AuthLoginSuccess;
             _Auth.swipe();
             lnkSettings.Visible = true;
+            setStyles(stylMan);
         }
 
         void _AuthLoginSuccess(object sender, EventArgs e)
@@ -92,6 +91,19 @@ namespace Nursery_Production_Software
                     subtile.Name = subdr["assmName"].ToString();
                     subtile.Text = subdr["formName"].ToString();
                     subtile.Tag = subdr["formCode"].ToString();
+
+                    try
+                    {
+                        Byte[] tileImage = new Byte[0];
+                        tileImage = (Byte[])(subdr["image"]);
+                        MemoryStream mem = new MemoryStream(tileImage);
+                        subtile.TileImage = Image.FromStream(mem);
+                        subtile.TileImageAlign = ContentAlignment.MiddleCenter;
+                        subtile.UseTileImage = true;
+                    }
+                    catch { }
+
+                    subtile.StyleManager = stylMan;
                     subtile.Location = new System.Drawing.Point(x, y);
 
                     subtile.Click += new EventHandler(DynamicButton_Click);
@@ -178,7 +190,6 @@ namespace Nursery_Production_Software
 
         private void lnLock_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(Convert.ToInt16(stylMan.Style).ToString());
             stylMan.Style = (MetroFramework.MetroColorStyle)5;
             stylMan.Theme = (MetroFramework.MetroThemeStyle)2;
         }
